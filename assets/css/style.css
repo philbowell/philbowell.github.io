@@ -13,7 +13,7 @@
   --space-lg: 4rem;
   --space-xl: 8rem;
 
-  --max-width: 720px;
+  --max-width: 960px;
   --padding-inline: clamp(1.25rem, 5vw, 2rem);
 }
 
@@ -125,7 +125,7 @@ a {
 /* Home */
 
 .home-tagline {
-  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 300;
   line-height: 1.25;
   letter-spacing: -0.02em;
