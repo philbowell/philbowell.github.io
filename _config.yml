@@ -1,0 +1,12 @@
+title: Phil Bowell
+description: Designer and visual artist
+url: ""
+baseurl: ""
+markdown: kramdown
+permalink: pretty
+
+exclude:
+  - scaffold.md
+  - README.md
+  - CLAUDE.md
+  - .claude/
