@@ -57,7 +57,7 @@ Open/closed issue state only — no GitHub Project board.
 - **Deployment:** Push to `main`
 - **JavaScript:** None (initial build)
 - **CSS:** `assets/css/style.css` — single file, built on CSS custom properties
-- **Fonts:** DM Sans via Google Fonts
+- **Fonts:** Figtree via Google Fonts
 
 ## Design Tokens
 

@@ -12,7 +12,7 @@
 - **Deployment**: Push to `main`, GitHub builds automatically
 - **JavaScript**: None for initial build
 - **CSS**: Single file (`assets/css/style.css`), built on custom properties for future dark mode
-- **Fonts**: DM Sans via Google Fonts (single request, no JS)
+- **Fonts**: Figtree via Google Fonts (single request, no JS)
 - **Dark mode**: Future — CSS custom properties in place from the start
 
 ### Pages (initial scope)
