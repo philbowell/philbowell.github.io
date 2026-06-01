@@ -141,12 +141,121 @@ a {
   margin-bottom: var(--space-md);
 }
 
+/* CV */
+
+.cv-hero {
+  margin-bottom: var(--space-lg);
+}
+
+.cv-section {
+  border-top: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent);
+  padding-top: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.cv-section:first-of-type {
+  margin-top: 0;
+}
+
+.cv-section h2 {
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+}
+
+.cv-role,
+.cv-project {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.35fr) minmax(0, 1fr);
+  gap: var(--space-md);
+  padding-block: var(--space-md);
+  border-top: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+}
+
+.cv-role:first-child,
+.cv-project:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.cv-role h3,
+.cv-project h3,
+.cv-skill-grid h3,
+.cv-education h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
+}
+
+.cv-role p,
+.cv-project p,
+.cv-education p {
+  max-width: 62ch;
+}
+
+.cv-date,
+.cv-org {
+  color: var(--color-secondary);
+}
+
+.cv-date {
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
+.cv-org {
+  margin-bottom: var(--space-sm);
+}
+
+.cv-role ul,
+.cv-skill-grid ul {
+  color: var(--color-secondary);
+  padding-left: 1.15rem;
+}
+
+.cv-role li,
+.cv-skill-grid li {
+  margin-bottom: 0.35rem;
+}
+
+.cv-project-list,
+.cv-education-list {
+  max-width: 72ch;
+}
+
+.cv-skill-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+.cv-skill-grid ul {
+  margin-top: var(--space-sm);
+}
+
+.cv-education {
+  padding-block: var(--space-md);
+  border-top: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+}
+
+.cv-education:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
 /* Responsive */
 
 @media (max-width: 540px) {
   nav {
     flex-direction: column;
     align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .cv-role,
+  .cv-project,
+  .cv-skill-grid {
+    grid-template-columns: 1fr;
     gap: var(--space-sm);
   }
 }
