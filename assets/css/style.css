@@ -154,12 +154,30 @@ a {
 }
 
 .cv-section:first-of-type {
+  border-top: 0;
   margin-top: 0;
+  padding-top: 0;
 }
 
 .cv-section h2 {
   margin-top: 0;
   margin-bottom: var(--space-md);
+}
+
+.cv-timeline {
+  --cv-timeline-x: 0.35rem;
+  padding-left: var(--space-md);
+  position: relative;
+}
+
+.cv-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0.35rem;
+  bottom: 0.35rem;
+  left: var(--cv-timeline-x);
+  width: 1px;
+  background: color-mix(in srgb, var(--color-accent) 34%, transparent);
 }
 
 .cv-role,
@@ -171,13 +189,42 @@ a {
   border-top: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
 }
 
+.cv-role {
+  border-top: 0;
+  display: block;
+  padding-block: calc(var(--space-md) * 1.25);
+  position: relative;
+}
+
+.cv-role + .cv-role {
+  margin-top: var(--space-sm);
+}
+
+.cv-role::before {
+  content: "";
+  position: absolute;
+  top: calc((var(--space-md) * 1.25) + 0.42rem);
+  left: calc(var(--cv-timeline-x) - var(--space-md));
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
 .cv-role:first-child,
 .cv-project:first-child {
   border-top: 0;
   padding-top: 0;
 }
 
+.cv-role:first-child::before {
+  top: 0.42rem;
+}
+
 .cv-role h3,
+.cv-subrole h4,
 .cv-project h3,
 .cv-skill-grid h3,
 .cv-education h3 {
@@ -188,6 +235,7 @@ a {
 }
 
 .cv-role p,
+.cv-subrole p,
 .cv-project p,
 .cv-education p {
   max-width: 62ch;
@@ -200,7 +248,7 @@ a {
 
 .cv-date {
   font-size: 0.875rem;
-  margin-bottom: 0;
+  margin-bottom: 0.15rem;
 }
 
 .cv-org {
@@ -208,14 +256,47 @@ a {
 }
 
 .cv-role ul,
+.cv-subrole ul,
 .cv-skill-grid ul {
   color: var(--color-secondary);
   padding-left: 1.15rem;
 }
 
 .cv-role li,
+.cv-subrole li,
 .cv-skill-grid li {
   margin-bottom: 0.35rem;
+}
+
+.cv-role-children {
+  --cv-branch-color: #8a5a63;
+  margin-top: var(--space-md);
+  margin-left: 0;
+  padding-left: var(--space-md);
+  border-left: 1px solid color-mix(in srgb, var(--cv-branch-color) 52%, transparent);
+  position: relative;
+}
+
+.cv-subrole {
+  padding-block: var(--space-sm);
+  position: relative;
+}
+
+.cv-subrole::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--space-sm) + 0.42rem);
+  left: calc(var(--space-md) * -1);
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--cv-branch-color);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.cv-subrole + .cv-subrole {
+  margin-top: var(--space-sm);
 }
 
 .cv-project-list,
@@ -257,5 +338,17 @@ a {
   .cv-skill-grid {
     grid-template-columns: 1fr;
     gap: var(--space-sm);
+  }
+
+  .cv-role {
+    padding-block: var(--space-md);
+  }
+
+  .cv-role::before {
+    top: calc(var(--space-md) + 0.42rem);
+  }
+
+  .cv-role:first-child::before {
+    top: 0.42rem;
   }
 }
