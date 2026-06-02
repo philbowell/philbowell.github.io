@@ -30,6 +30,8 @@ Before building, write a plan to `.Codex/plans/<issue-slug>.md` and link it from
 
 Use `Closes #N` in commit messages to auto-close issues on merge to `main`.
 
+Do not commit or push changes until Phil explicitly gives permission. Build and verify the work first, then wait for approval before staging, committing, or pushing.
+
 ### Issues get a closing comment
 
 When work is done, comment on the issue with the commit link and a one-line summary of what changed.
@@ -46,8 +48,10 @@ Open/closed issue state only — no GitHub Project board.
 2. Create a GitHub Issue with appropriate labels
 3. Write a plan to `.Codex/plans/<issue-slug>.md`
 4. Link the plan from the issue as a comment
-5. Build, committing with `Closes #N`
-6. Comment on the issue with the commit link and a one-line summary
+5. Build and verify the change
+6. Wait for Phil's explicit permission before staging, committing, or pushing
+7. Commit with `Closes #N`
+8. Comment on the issue with the commit link and a one-line summary
 
 ---
 
