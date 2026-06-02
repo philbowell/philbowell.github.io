@@ -159,12 +159,17 @@ a {
   padding-top: 0;
 }
 
+.cv-section[aria-labelledby="skills"] {
+  border-top: 0;
+}
+
 .cv-section h2 {
   margin-top: 0;
   margin-bottom: var(--space-md);
 }
 
 .cv-timeline {
+  --cv-line-color: color-mix(in srgb, var(--color-accent) 34%, transparent);
   --cv-timeline-x: 0.35rem;
   padding-left: var(--space-md);
   position: relative;
@@ -173,11 +178,16 @@ a {
 .cv-timeline::before {
   content: "";
   position: absolute;
-  top: 0.35rem;
+  top: 0.7rem;
   bottom: 0.35rem;
   left: var(--cv-timeline-x);
   width: 1px;
-  background: color-mix(in srgb, var(--color-accent) 34%, transparent);
+  background: linear-gradient(
+    to bottom,
+    var(--cv-line-color) 0%,
+    var(--cv-line-color) calc(100% - var(--space-lg)),
+    color-mix(in srgb, var(--color-accent) 0%, transparent) 100%
+  );
 }
 
 .cv-role,
@@ -204,11 +214,14 @@ a {
   content: "";
   position: absolute;
   top: calc((var(--space-md) * 1.25) + 0.42rem);
-  left: calc(var(--cv-timeline-x) - var(--space-md));
+  left: calc(var(--cv-timeline-x) - var(--space-md) + 1px);
   width: 0.55rem;
+  min-width: 9px;
   height: 0.55rem;
+  min-height: 9px;
+  border: 1px solid var(--cv-line-color);
   border-radius: 50%;
-  background: var(--color-accent);
+  background: var(--color-bg);
   transform: translateX(-50%);
   z-index: 1;
 }
@@ -221,13 +234,29 @@ a {
 
 .cv-role:first-child::before {
   top: 0.42rem;
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  animation: cv-current-pulse 2.4s ease-out infinite;
+}
+
+@keyframes cv-current-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent) 30%, transparent);
+  }
+
+  70% {
+    box-shadow: 0 0 0 0.45rem color-mix(in srgb, var(--color-accent) 0%, transparent);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent) 0%, transparent);
+  }
 }
 
 .cv-role h3,
 .cv-subrole h4,
 .cv-project h3,
-.cv-skill-grid h3,
-.cv-education h3 {
+.cv-skill-list h3 {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.4;
@@ -236,8 +265,7 @@ a {
 
 .cv-role p,
 .cv-subrole p,
-.cv-project p,
-.cv-education p {
+.cv-project p {
   max-width: 62ch;
 }
 
@@ -248,6 +276,8 @@ a {
 
 .cv-date {
   font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
   margin-bottom: 0.15rem;
 }
 
@@ -257,24 +287,39 @@ a {
 
 .cv-role ul,
 .cv-subrole ul,
-.cv-skill-grid ul {
+.cv-skill-list ul {
   color: var(--color-secondary);
   padding-left: 1.15rem;
 }
 
 .cv-role li,
 .cv-subrole li,
-.cv-skill-grid li {
+.cv-skill-list li {
   margin-bottom: 0.35rem;
 }
 
 .cv-role-children {
   --cv-branch-color: #8a5a63;
+  --cv-branch-line-color: color-mix(in srgb, var(--cv-branch-color) 52%, transparent);
   margin-top: var(--space-md);
   margin-left: 0;
   padding-left: var(--space-md);
-  border-left: 1px solid color-mix(in srgb, var(--cv-branch-color) 52%, transparent);
   position: relative;
+}
+
+.cv-role-children::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0.35rem;
+  left: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    var(--cv-branch-line-color) 0%,
+    var(--cv-branch-line-color) calc(100% - var(--space-md)),
+    color-mix(in srgb, var(--cv-branch-color) 0%, transparent) 100%
+  );
 }
 
 .cv-subrole {
@@ -288,9 +333,12 @@ a {
   top: calc(var(--space-sm) + 0.42rem);
   left: calc(var(--space-md) * -1);
   width: 0.4rem;
+  min-width: 9px;
   height: 0.4rem;
+  min-height: 9px;
+  border: 1px solid var(--cv-branch-line-color);
   border-radius: 50%;
-  background: var(--cv-branch-color);
+  background: var(--color-bg);
   transform: translateX(-50%);
   z-index: 1;
 }
@@ -299,29 +347,53 @@ a {
   margin-top: var(--space-sm);
 }
 
-.cv-project-list,
-.cv-education-list {
+.cv-project-list {
   max-width: 72ch;
 }
 
-.cv-skill-grid {
+.cv-skill-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-md);
+  gap: calc(var(--space-md) * 1.15);
 }
 
-.cv-skill-grid ul {
-  margin-top: var(--space-sm);
+.cv-skill-list h3 {
+  color: color-mix(in srgb, var(--color-secondary) 70%, transparent);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
+  text-transform: uppercase;
 }
 
-.cv-education {
-  padding-block: var(--space-md);
-  border-top: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+.cv-skill-list ul {
+  margin-top: 0;
 }
 
-.cv-education:first-child {
-  border-top: 0;
-  padding-top: 0;
+.cv-inline-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0;
+  list-style: none;
+  padding-left: 0;
+}
+
+.cv-skill-list .cv-inline-list {
+  padding-left: 0;
+}
+
+.cv-inline-list li {
+  display: inline-flex;
+  align-items: center;
+  color: color-mix(in srgb, var(--color-text) 72%, var(--color-secondary));
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.cv-inline-list li + li::before {
+  content: "·";
+  margin-inline: 0.35rem;
+  color: color-mix(in srgb, var(--color-secondary) 78%, transparent);
 }
 
 /* Responsive */
@@ -334,8 +406,7 @@ a {
   }
 
   .cv-role,
-  .cv-project,
-  .cv-skill-grid {
+  .cv-project {
     grid-template-columns: 1fr;
     gap: var(--space-sm);
   }

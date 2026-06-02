@@ -13,7 +13,7 @@ title: CV
   <div class="cv-timeline">
     <article class="cv-role">
       <div class="cv-role-content">
-        <p class="cv-date">Apr 2021 – Present</p>
+        <p class="cv-date">04/2021 – Present</p>
         <h3>Senior UX / UI Designer</h3>
         <p class="cv-org">UCAS</p>
         <p>Designing user experiences for students and teachers, working on high-profile projects including revealing historical entry grades data and a partnership with Springpod — both contributing to UCAS being named Innovator of the Year 2024.</p>
@@ -28,7 +28,7 @@ title: CV
 
     <article class="cv-role">
       <div class="cv-role-content">
-        <p class="cv-date">Aug 2019 – Apr 2021</p>
+        <p class="cv-date">08/2019 – 04/2021</p>
         <h3>UX / UI Designer</h3>
         <p class="cv-org">UCAS</p>
         <p>Designed experiences across customer groups and products. Reimagined the application system in close collaboration with stakeholders and development teams, keeping the student at the centre of every decision.</p>
@@ -42,14 +42,14 @@ title: CV
 
     <article class="cv-role">
       <div class="cv-role-content">
-        <p class="cv-date">Aug 2012 – Aug 2019</p>
+        <p class="cv-date">08/2012 – 08/2019</p>
         <h3>Freelance Designer</h3>
         <p class="cv-org">Phil Bowell Design</p>
         <p>I worked as an independent designer for 7 years across a range of disciplines and clients. This allowed me to expand my skillset into new areas and established a firm interest in the digital world. I worked with a number of clients across the UK including non-profits, places of education, and local businesses.</p>
 
         <div class="cv-role-children">
           <article class="cv-subrole">
-            <p class="cv-date">Jul 2018 – May 2019</p>
+            <p class="cv-date">07/2018 – 05/2019</p>
             <h4>UI Designer</h4>
             <p class="cv-org">Factory Pattern</p>
             <p>Joined Cheltenham-based design consultancy Factory Pattern as a consultant, creating website visuals and completing front-end development work across a range of projects.</p>
@@ -61,7 +61,7 @@ title: CV
           </article>
 
           <article class="cv-subrole">
-            <p class="cv-date">Mar 2017 – Jul 2019</p>
+            <p class="cv-date">03/2017 – 07/2019</p>
             <h4>Web Designer</h4>
             <p class="cv-org">CMJ UK</p>
             <p>After designing and building a new site for CMJ UK in 2016, joined as a remote subcontractor to maintain and evolve the site — including launching a new shop in early 2019.</p>
@@ -95,7 +95,7 @@ title: CV
 
     <article class="cv-role">
       <div class="cv-role-content">
-        <p class="cv-date">Oct 2010 – Aug 2012</p>
+        <p class="cv-date">10/2010 – 08/2012</p>
         <h3>Graphic Designer</h3>
         <p class="cv-org">Herald Chase Group</p>
         <p>Part of the print design team serving local and national clients including Enterprise Rent-a-Car, Pack &amp; Send, and Twofold. Also responsible for managing and consistently applying the company brand across print material.</p>
@@ -104,22 +104,40 @@ title: CV
 
     <article class="cv-role">
       <div class="cv-role-content">
-        <p class="cv-date">Nov 2007 – Oct 2010</p>
+        <p class="cv-date">11/2007 – 10/2010</p>
         <h3>Graphic Designer &amp; Studio Manager</h3>
         <p class="cv-org">Trafalgar Media Advertising</p>
         <p>One of the main designers in a team specialising in housing industry work. Lead designer on key projects for clients including Barratt Homes, Antler Homes, and TA Fisher. Later promoted to Studio Manager, overseeing workflow and coordinating with the print department.</p>
       </div>
     </article>
+
+    <article class="cv-role">
+      <div class="cv-role-content">
+        <p class="cv-date">2004–2007</p>
+        <h3>BA (Hons) Graphic Design</h3>
+        <p class="cv-org">University of Gloucestershire</p>
+        <p>2:1 degree classification.</p>
+      </div>
+    </article>
   </div>
 </section>
 
-<section class="cv-section" aria-labelledby="tools-expertise">
-  <h2 id="tools-expertise">Tools &amp; expertise</h2>
+<section class="cv-section" aria-labelledby="skills">
+  <h2 id="skills">Skills</h2>
 
-  <div class="cv-skill-grid">
+  <div class="cv-skill-list">
     <div>
-      <h3>Design Tools</h3>
-      <ul>
+      <h3>Design</h3>
+      <ul class="cv-inline-list">
+        <li>UX Design</li>
+        <li>UI Design</li>
+        <li>Design Systems</li>
+        <li>User Testing</li>
+        <li>Graphic Design</li>
+        <li>Brand Identity</li>
+        <li>Print Design</li>
+      </ul>
+      <ul class="cv-inline-list">
         <li>Figma</li>
         <li>Axure RP</li>
         <li>Sketch</li>
@@ -131,50 +149,24 @@ title: CV
     </div>
 
     <div>
-      <h3>Development</h3>
-      <ul>
+      <h3>Dev</h3>
+      <ul class="cv-inline-list">
         <li>HTML &amp; CSS</li>
         <li>Git / Source Control</li>
         <li>Front-end Development</li>
         <li>Responsive Design</li>
+        <li>Claude Code</li>
+        <li>Codex</li>
       </ul>
     </div>
 
     <div>
-      <h3>Disciplines</h3>
-      <ul>
-        <li>UX Design</li>
-        <li>UI Design</li>
-        <li>Design Systems</li>
-        <li>User Testing</li>
-        <li>Graphic Design</li>
-        <li>Brand Identity</li>
-        <li>Print Design</li>
+      <h3>Sectors</h3>
+      <ul class="cv-inline-list">
+        <li>B2B</li>
+        <li>B2C</li>
+        <li>Non-profit</li>
       </ul>
     </div>
-  </div>
-</section>
-
-<section class="cv-section" aria-labelledby="academic-background">
-  <h2 id="academic-background">Academic background</h2>
-
-  <div class="cv-education-list">
-    <article class="cv-education">
-      <h3>University of Gloucestershire</h3>
-      <p>2:1 BA (Hons) Graphic Design</p>
-      <p class="cv-date">2004–2007</p>
-    </article>
-
-    <article class="cv-education">
-      <h3>New College Nottingham</h3>
-      <p>Level 3 Diploma in Foundation Studies Art &amp; Design — Merit</p>
-      <p class="cv-date">2003–2004</p>
-    </article>
-
-    <article class="cv-education">
-      <h3>Minster School Southwell</h3>
-      <p>A-Level Fine Art (B) · Design &amp; Technology: Product Design (B) · Geography (A)</p>
-      <p class="cv-date">2001–2003</p>
-    </article>
   </div>
 </section>
