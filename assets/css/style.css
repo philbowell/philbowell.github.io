@@ -435,6 +435,74 @@ a {
   color: color-mix(in srgb, var(--color-secondary) 78%, transparent);
 }
 
+/* Colophon */
+
+.colophon-hero {
+  margin-bottom: var(--space-lg);
+}
+
+.colophon-kicker,
+.colophon-label {
+  color: color-mix(in srgb, var(--color-secondary) 74%, transparent);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  margin-bottom: var(--space-xs);
+  text-transform: uppercase;
+}
+
+.colophon-hero p:last-child {
+  color: var(--color-secondary);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  max-width: 58ch;
+}
+
+.colophon-section {
+  border-top: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.32fr) minmax(0, 1fr);
+  gap: var(--space-md);
+  padding-block: var(--space-md);
+}
+
+.colophon-section h2 {
+  color: color-mix(in srgb, var(--color-text) 82%, var(--color-secondary));
+  font-size: 1rem;
+  margin: 0;
+}
+
+.colophon-section > p,
+.colophon-section > .colophon-details {
+  grid-column: 2;
+}
+
+.colophon-section p {
+  color: var(--color-secondary);
+}
+
+.colophon-details {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.colophon-label {
+  color: color-mix(in srgb, var(--color-accent) 78%, var(--color-secondary));
+  letter-spacing: 0.06em;
+  margin-bottom: 0.2rem;
+}
+
+.colophon-details p:last-child,
+.colophon-section p:last-child {
+  margin-bottom: 0;
+}
+
+.colophon-note {
+  color: color-mix(in srgb, var(--color-secondary) 78%, var(--color-bg));
+  font-size: 0.875rem;
+}
+
 /* Responsive */
 
 @media (max-width: 540px) {
@@ -460,5 +528,15 @@ a {
 
   .cv-role:first-child::before {
     top: 0.42rem;
+  }
+
+  .colophon-section {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .colophon-section > p,
+  .colophon-section > .colophon-details {
+    grid-column: 1;
   }
 }
