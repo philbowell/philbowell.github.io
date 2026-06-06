@@ -180,6 +180,67 @@ a {
   margin-bottom: var(--space-md);
 }
 
+/* About */
+
+.about-hero {
+  align-items: end;
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.45fr);
+  margin-bottom: var(--space-lg);
+}
+
+.about-kicker {
+  color: color-mix(in srgb, var(--color-accent) 78%, var(--color-secondary));
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  margin-bottom: var(--space-xs);
+  text-transform: uppercase;
+}
+
+.about-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  max-width: 13ch;
+  margin-bottom: 0;
+}
+
+.about-portrait {
+  justify-self: end;
+  transform: translate(-2rem, 2.25rem) rotate(5deg);
+  transform-origin: center;
+  width: min(100%, 19rem);
+}
+
+.about-portrait img {
+  aspect-ratio: 1 / 1.08;
+  border: 0.75rem solid color-mix(in srgb, var(--color-bg) 74%, white);
+  box-shadow: 0 1.25rem 2.5rem color-mix(in srgb, var(--color-text) 10%, transparent);
+  display: block;
+  height: auto;
+  object-fit: cover;
+  object-position: center 34%;
+  width: 100%;
+}
+
+.about-body {
+  padding-block: var(--space-md);
+}
+
+.about-body p {
+  color: var(--color-secondary);
+  max-width: 55ch;
+}
+
+.about-body p:last-child {
+  margin-bottom: 0;
+}
+
+.about-link {
+  margin-top: var(--space-md);
+}
+
 /* CV */
 
 .cv-hero {
@@ -528,6 +589,22 @@ a {
 
   .cv-role:first-child::before {
     top: 0.42rem;
+  }
+
+  .about-hero {
+    align-items: start;
+    gap: var(--space-md);
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero h1 {
+    max-width: 16ch;
+  }
+
+  .about-portrait {
+    justify-self: start;
+    transform: rotate(5deg);
+    width: min(100%, 20rem);
   }
 
   .colophon-section {
