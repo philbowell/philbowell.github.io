@@ -15,5 +15,43 @@
     {{ content }}
   </main>
   {% include footer.html %}
+  <script>
+    (() => {
+      const nav = document.querySelector('.site-nav');
+      const navToggle = document.querySelector('.nav-toggle');
+
+      if (nav && navToggle) {
+        nav.dataset.menuEnhanced = 'true';
+
+        navToggle.addEventListener('click', () => {
+          const isOpen = nav.dataset.menuOpen === 'true';
+
+          nav.dataset.menuOpen = String(!isOpen);
+          navToggle.setAttribute('aria-expanded', String(!isOpen));
+        });
+
+        nav.addEventListener('click', (event) => {
+          if (event.target.closest('.site-menu a')) {
+            nav.dataset.menuOpen = 'false';
+            navToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        document.addEventListener('click', (event) => {
+          if (!nav.contains(event.target)) {
+            nav.dataset.menuOpen = 'false';
+            navToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') {
+            nav.dataset.menuOpen = 'false';
+            navToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
