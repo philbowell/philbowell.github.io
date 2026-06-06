@@ -69,10 +69,27 @@ nav a:hover {
 /* Main */
 
 main {
+  animation: page-in 180ms ease-out both;
   max-width: var(--max-width);
   margin-inline: auto;
   padding-inline: var(--padding-inline);
   padding-block: var(--space-lg);
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main {
+    animation: none;
+  }
 }
 
 /* Footer */
